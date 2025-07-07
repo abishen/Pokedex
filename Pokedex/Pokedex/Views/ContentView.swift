@@ -18,7 +18,9 @@ struct ContentView: View {
                 })) { entry in
                     HStack{
                         PokemonImage(imageLink: "\(entry.url)").padding(.trailing,20)
-                        NavigationLink("\(entry.name)".capitalized, destination: Text("Detail View for \(entry.name)"))
+                        //NavigationLink("\(entry.name)".capitalized, destination: Text("Detail View for \(entry.name)"))
+                        
+                        NavigationLink("\(entry.name)".capitalized, destination:  PokemonImage(imageLink: "\(entry.url)").padding(.trailing,20))
                                 
                     }
                     

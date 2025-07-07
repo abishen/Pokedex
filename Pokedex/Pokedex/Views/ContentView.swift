@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import Alamofire
 struct ContentView: View {
     @State var pokemon = [PokemonEntry]()
     @State var SearchText = ""
@@ -24,7 +24,7 @@ struct ContentView: View {
                     
                 }
             }.onAppear(){
-             PokeApi().fetchPokemon { (pokemon) in
+                PokeApi().FetchPokemon() { (pokemon) in
                     self.pokemon = pokemon
                  for pokemon in pokemon {
                      print(pokemon.name)

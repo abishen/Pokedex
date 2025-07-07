@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Alamofire
 struct PokemonSelected: Codable {
     var sprites : PokemonSprites
     var weight : Int
@@ -28,6 +28,18 @@ class PokemonSelectedApi {
             DispatchQueue.main.async {
                 completeion(pokemonSpirit.sprites)
             }
+        }.resume()
+    }
+    
+    func FetchPokemonSprites(url: String, completetion : @escaping (PokemonSprites) -> ()) {
+        guard let url = URL(string: url) else { return }
+        
+        AF.request(url).responseDecodable(of: PokemonSelected.self) { (response) in
+            let pokemonSprites = try! response.value?.sprites
+            DispatchQueue.main.async {
+                completetion(pokemonSprites!)
+            }
+            
         }.resume()
     }
 }

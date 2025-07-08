@@ -13,6 +13,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView() {
             List {
+                
                 ForEach(SearchText == "" ? viewModel.pokemonList : viewModel.pokemonList.filter({
                     $0.name.contains(SearchText.lowercased())
                 })) { entry in
@@ -27,6 +28,7 @@ struct ContentView: View {
                 }
             }.searchable(text: $SearchText)
                 .navigationTitle("Pokedex")
+                .preferredColorScheme(.dark)
         }
     }
 }

@@ -24,9 +24,9 @@ class PokeApi {
             return
         }
         AF.request(url).responseDecodable(of: Pokemon.self) { response in
-            let PokemonList = try! response.value!.results
+            let PokemonList = try! response.value?.results
             DispatchQueue.main.async {
-                complete(PokemonList)
+                complete(PokemonList!)
             }
         }.resume()
         

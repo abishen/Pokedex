@@ -47,11 +47,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		3202A1B02E1DA88F0005A261 /* Model */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Model;
-			sourceTree = "<group>";
-		};
 		329F84652E10A7B9009DDE3D /* Pokedex */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Pokedex;
@@ -88,7 +83,6 @@
 		329F845A2E10A7B9009DDE3D = {
 			isa = PBXGroup;
 			children = (
-				3202A1B02E1DA88F0005A261 /* Model */,
 				329F84652E10A7B9009DDE3D /* Pokedex */,
 				329F84642E10A7B9009DDE3D /* Products */,
 			);
@@ -121,7 +115,6 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				3202A1B02E1DA88F0005A261 /* Model */,
 				329F84652E10A7B9009DDE3D /* Pokedex */,
 			);
 			name = Pokedex;

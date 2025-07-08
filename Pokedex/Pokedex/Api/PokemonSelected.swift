@@ -18,18 +18,6 @@ struct PokemonSprites: Codable {
 }
 
 class PokemonSelectedApi {
-    func fetchPokemon(url: String ,completeion: @escaping (PokemonSprites) -> ()) {
-        guard let url = URL(string: url) else { return }
-        URLSession.shared.dataTask(with: url) {(data,response,error) in
-            guard let data = data else {
-                return
-            }
-            let pokemonSpirit = try! JSONDecoder().decode(PokemonSelected.self, from: data)
-            DispatchQueue.main.async {
-                completeion(pokemonSpirit.sprites)
-            }
-        }.resume()
-    }
     
     func FetchPokemonSprites(url: String, completetion : @escaping (PokemonSprites) -> ()) {
         guard let url = URL(string: url) else { return }

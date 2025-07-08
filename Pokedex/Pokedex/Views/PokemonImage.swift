@@ -9,10 +9,12 @@ import SwiftUI
 
 struct PokemonImage: View {
     var imageLink = ""
+    var width : CGFloat = 75
+    var height : CGFloat = 75
     @State private var pokemonSprites = ""
     var body: some View {
         AsyncImage(url: URL(string: pokemonSprites))
-            .frame(width:75, height: 75)
+            .frame(width:width, height: height)
             .onAppear {
                 let loadData =  UserDefaults.standard.string(forKey: imageLink)
                 

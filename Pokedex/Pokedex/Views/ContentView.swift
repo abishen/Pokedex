@@ -8,12 +8,12 @@
 import SwiftUI
 import Alamofire
 struct ContentView: View {
-    @State var pokemon = [PokemonEntry]()
+    @StateObject var viewModel =  PokemonViewModel()
     @State var SearchText = ""
     var body: some View {
         NavigationView() {
             List {
-                ForEach(SearchText == "" ? pokemon : pokemon.filter({
+                ForEach(SearchText == "" ? viewModel.pokemonList : viewModel.pokemonList.filter({
                     $0.name.contains(SearchText.lowercased())
                 })) { entry in
                     HStack{
@@ -25,14 +25,6 @@ struct ContentView: View {
                     }
                     
                 }
-            }.onAppear(){
-                PokeApi().FetchPokemon() { (pokemon) in
-                    self.pokemon = pokemon
-                 for pokemon in pokemon {
-                     print(pokemon.name)
-                 }
-                }
-                
             }.searchable(text: $SearchText)
                 .navigationTitle("Pokedex")
         }

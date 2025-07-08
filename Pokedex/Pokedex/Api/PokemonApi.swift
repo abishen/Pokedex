@@ -7,15 +7,6 @@
 
 import Foundation
 import Alamofire
-struct Pokemon : Codable {
-    var results: [PokemonEntry]
-}
-
-struct PokemonEntry : Codable , Identifiable{
-    let id = UUID()
-    var name : String
-    var url : String
-}
 
 class PokeApi {
     func FetchPokemon(complete: @escaping ([PokemonEntry]) -> ()) {

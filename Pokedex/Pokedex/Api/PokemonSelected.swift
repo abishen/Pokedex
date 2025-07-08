@@ -7,16 +7,6 @@
 
 import Foundation
 import Alamofire
-struct PokemonSelected: Codable {
-    var sprites : PokemonSprites
-    var weight : Int
-    
-}
-
-struct PokemonSprites: Codable {
-    var front_default : String
-}
-
 class PokemonSelectedApi {
     
     func FetchPokemonSprites(url: String, completetion : @escaping (PokemonSprites) -> ()) {

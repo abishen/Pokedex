@@ -33,7 +33,8 @@ struct PokemonImage: View {
     
     func getSprites(url: String) {
         var tempSprites: String?
-        PokemonSelectedApi().FetchPokemonSprites(url: url ) {sprites in
+        var service = PokemonSelectedApi()
+        service.FetchPokemonSprites(url: url ) {sprites in
             tempSprites = sprites.front_default
             self.pokemonSprites = tempSprites ?? "placeholder"
         }
